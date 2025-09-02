@@ -5352,10 +5352,9 @@ contactForm.addEventListener('submit', (e) => {
             
             showNotification(`Thank you, ${name}! Your message has been received.`, 'success');
             
-            // Reset form
+            // Reset form even on error to ensure fields are cleared after submission attempt
             e.target.reset();
             
-            // Hide message after 5 seconds
             setTimeout(() => {
                 formMessage.style.display = 'none';
             }, 5000);
@@ -6333,5 +6332,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
 </body>
 </html>
+
 
 
