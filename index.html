@@ -2647,6 +2647,40 @@ body.dark-mode .project-features::-webkit-scrollbar-thumb:hover {
         body.dark-mode .wave path {
             fill: var(--dark);
         }
+
+        body.dark-mode .chatbot-window {
+            background: #1e2832;
+        }
+
+        body.dark-mode .chatbot-header {
+            background: var(--sidebar-bg);
+        }
+
+        body.dark-mode .chat-message.bot {
+            background: #34495e;
+            color: #ecf0f1;
+        }
+
+        body.dark-mode .chat-message.bot a {
+            color: #3498db;
+        }
+
+        body.dark-mode #chatbot-input {
+            background: #34495e;
+            color: #ecf0f1;
+        }
+
+        body.dark-mode .chatbot-input-container {
+            border-top-color: #3a4a5a;
+        }
+
+        body.dark-mode .chatbot-messages::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-mode .chatbot-messages::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+        }
         
         body.dark-mode .theme-toggle-btn {
             background: var(--primary);
@@ -2793,6 +2827,24 @@ body.dark-mode .project-features::-webkit-scrollbar-thumb:hover {
             .scroll-up {
                 right: 15px;
             }
+
+            .chatbot-container {
+                bottom: 80px; /* Position above scroll-up button */
+                right: 15px;
+            }
+            .chatbot-window {
+                bottom: 70px; /* From the icon */
+                right: 0;
+                width: calc(100vw - 30px);
+                max-height: calc(100vh - 170px);
+            }
+            .chatbot-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+
             
             /* Modal responsive adjustments */
             .modal-content {
@@ -3778,7 +3830,7 @@ body.dark-mode #idea-modal-tech span {
     }
 }
 
-        /* Chatbot Styles */
+/* Chatbot Styles */
 .chatbot-container {
     position: fixed;
     bottom: 30px;
@@ -3964,54 +4016,6 @@ body.dark-mode #idea-modal-tech span {
 #chatbot-send:hover {
     color: var(--accent);
 }
-        .chatbot-container {
-                bottom: 80px; /* Position above scroll-up button */
-                right: 15px;
-            }
-            .chatbot-window {
-                bottom: 70px; /* From the icon */
-                right: 0;
-                width: calc(100vw - 30px);
-                max-height: calc(100vh - 170px);
-            }
-            .chatbot-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-         body.dark-mode .chatbot-window {
-            background: #1e2832;
-        }
-
-        body.dark-mode .chatbot-header {
-            background: var(--sidebar-bg);
-        }
-
-        body.dark-mode .chat-message.bot {
-            background: #34495e;
-            color: #ecf0f1;
-        }
-
-        body.dark-mode .chat-message.bot a {
-            color: #3498db;
-        }
-
-        body.dark-mode #chatbot-input {
-            background: #34495e;
-            color: #ecf0f1;
-        }
-
-        body.dark-mode .chatbot-input-container {
-            border-top-color: #3a4a5a;
-        }
-
-        body.dark-mode .chatbot-messages::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        body.dark-mode .chatbot-messages::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -4120,7 +4124,7 @@ body.dark-mode #idea-modal-tech span {
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images\myimage.jpeg" alt="Profile">
+                <img src="E:\joel_portfolio\images\myimage.jpeg" alt="Profile">
             </div>
         </section>
         
@@ -4135,7 +4139,7 @@ body.dark-mode #idea-modal-tech span {
                     <a href="JoelJoyResume (2).docx" class="btn magnetic glow" download>Download Resume</a>
                 </div>
                 <div class="about-image parallax">
-                    <img src="images\JOEL.jpeg" alt="About">
+                    <img src="E:\joel_portfolio\images\JOEL.jpeg" alt="About">
                 </div>
             </div>
         </section>
@@ -4309,7 +4313,7 @@ body.dark-mode #idea-modal-tech span {
                 
                 <!-- Project 2: Car Service History Management System -->
                 <div class="project-card">
-                    <img src="images\car_m1.PNG" alt="Car Service History Management System" class="project-image">
+                    <img src="E:\joel_portfolio\images\car_m1.PNG" alt="Car Service History Management System" class="project-image">
                     <div class="project-info">
                         <h3>Car Service History Management System</h3>
                         <p>A comprehensive system to link registered users (Customers, Owners, Mechanics) to view and manage service history.</p>
@@ -4358,7 +4362,7 @@ body.dark-mode #idea-modal-tech span {
                 
                 <!-- Project 4: Placement Cell Website -->
                 <div class="project-card">
-                    <img src="images\place1.PNG" alt="Placement Cell Website" class="project-image">
+                    <img src="E:\joel_portfolio\images\place1.PNG" alt="Placement Cell Website" class="project-image">
                     <div class="project-info">
                         <h3>Placement Cell Website</h3>
                         <p>A comprehensive platform to manage student placements and job postings with multiple integrated applications.</p>
@@ -4403,7 +4407,7 @@ body.dark-mode #idea-modal-tech span {
 
 <!-- Project: Nissan-Inspired Website -->
 <div class="project-card">
-    <img src="images\nissan1.PNG" alt="Nissan-Inspired Website" class="project-image">
+    <img src="E:\joel_portfolio\images\nissan1.PNG" alt="Nissan-Inspired Website" class="project-image">
     <div class="project-info">
         <h3>Dynamic Nissan-Inspired Website</h3>
         <p>A dynamic, automotive-themed website built using WordPress, inspired by the Nissan brand's modern digital identity. The goal was to create an engaging, high-performance platform that showcases vehicles in a sleek and immersive way.</p>
@@ -4430,7 +4434,7 @@ body.dark-mode #idea-modal-tech span {
     <div class="events-container">
         <div class="event-card">
             <div class="event-image">
-                <img src="images\nov.jpeg" alt="Novus Tech Fest">
+                <img src="E:\joel_portfolio\images\nov.jpeg" alt="Novus Tech Fest">
                 <div class="event-overlay">
                     <div class="event-date">2024</div>
                 </div>
@@ -4452,7 +4456,7 @@ body.dark-mode #idea-modal-tech span {
         
         <div class="event-card">
             <div class="event-image">
-                <img src="images\nova.jpg" alt="Novathan Hackathon">
+                <img src="E:\joel_portfolio\images\nova.jpg" alt="Novathan Hackathon">
                 <div class="event-overlay">
                     <div class="event-date">2024</div>
                 </div>
@@ -4474,7 +4478,7 @@ body.dark-mode #idea-modal-tech span {
         
         <div class="event-card">
             <div class="event-image">
-                <img src="images\jaak.jpeg" alt="Jaak.in Media">
+                <img src="E:\joel_portfolio\images\jaak.jpeg" alt="Jaak.in Media">
                 <div class="event-overlay">
                     <div class="event-date">2024-Present</div>
                 </div>
@@ -4518,7 +4522,7 @@ body.dark-mode #idea-modal-tech span {
         
         <div class="event-card">
             <div class="event-image">
-                <img src="images\adzyo.jpeg" alt="Adzyo Startup">
+                <img src="E:\joel_portfolio\images\adzyo.jpeg" alt="Adzyo Startup">
                 <div class="event-overlay">
                     <div class="event-date">2025</div>
                 </div>
@@ -4550,7 +4554,7 @@ body.dark-mode #idea-modal-tech span {
     <div class="certificates-container">
         <div class="certificate-card" data-category="technical">
             <div class="certificate-image">
-                <img src="images\cert1.jpg" alt="Certificate 1">
+                <img src="E:\joel_portfolio\images\cert1.jpg" alt="Certificate 1">
                 <div class="certificate-overlay">
                     <div class="certificate-icon">
                         <i class="fas fa-search-plus"></i>
@@ -4566,7 +4570,7 @@ body.dark-mode #idea-modal-tech span {
         
         <div class="certificate-card" data-category="workshop">
             <div class="certificate-image">
-                <img src="images\cert2.jpg" alt="Certificate 2">
+                <img src="E:\joel_portfolio\images\cert2.jpg" alt="Certificate 2">
                 <div class="certificate-overlay">
                     <div class="certificate-icon">
                         <i class="fas fa-search-plus"></i>
@@ -4582,7 +4586,7 @@ body.dark-mode #idea-modal-tech span {
         
        <div class="certificate-card" data-category="achievement">
             <div class="certificate-image">
-                <img src="images\cert3.jpeg" alt="Certificate 3">
+                <img src="E:\joel_portfolio\images\cert3.jpeg" alt="Certificate 3">
                 <div class="certificate-overlay">
                     <div class="certificate-icon">
                         <i class="fas fa-search-plus"></i>
@@ -4598,7 +4602,7 @@ body.dark-mode #idea-modal-tech span {
         
          <div class="certificate-card" data-category="technical">
             <div class="certificate-image">
-                <img src="images\git.jpg" alt="Certificate 4">
+                <img src="E:\joel_portfolio\images\git.jpg" alt="Certificate 4">
                 <div class="certificate-overlay">
                     <div class="certificate-icon">
                         <i class="fas fa-search-plus"></i>
@@ -4614,7 +4618,7 @@ body.dark-mode #idea-modal-tech span {
         
         <div class="certificate-card" data-category="workshop">
             <div class="certificate-image">
-                <img src="images\cloud.jpg" alt="Certificate 5">
+                <img src="E:\joel_portfolio\images\cloud.jpg" alt="Certificate 5">
                 <div class="certificate-overlay">
                     <div class="certificate-icon">
                         <i class="fas fa-search-plus"></i>
@@ -4983,37 +4987,37 @@ body.dark-mode #idea-modal-tech span {
             <div class="gallery-container">
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="images\image1.jpeg" alt="Gallery Image 1">
+                        <img src="E:\joel_portfolio\images\image1.jpeg" alt="Gallery Image 1">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images\image2.jpeg" alt="Gallery Image 2">
+                        <img src="E:\joel_portfolio\images\image2.jpeg" alt="Gallery Image 2">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images\image3.jpeg" alt="Gallery Image 3">
+                        <img src="E:\joel_portfolio\images\image3.jpeg" alt="Gallery Image 3">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images\image4.jpeg" alt="Gallery Image 4">
+                        <img src="E:\joel_portfolio\images\image4.jpeg" alt="Gallery Image 4">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images\image5.jpeg" alt="Gallery Image 5">
+                        <img src="E:\joel_portfolio\images\image5.jpeg" alt="Gallery Image 5">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="images\image6.jpeg" alt="Gallery Image 6">
+                        <img src="E:\joel_portfolio\images\image6.jpeg" alt="Gallery Image 6">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
@@ -5094,7 +5098,8 @@ body.dark-mode #idea-modal-tech span {
             </div>
         </footer>
     </div>
-     <!-- Chatbot -->
+
+    <!-- Chatbot -->
     <div class="chatbot-container">
         <div class="chatbot-icon" id="chatbot-icon">
             <i class="fas fa-robot"></i>
@@ -5113,6 +5118,7 @@ body.dark-mode #idea-modal-tech span {
             </div>
         </div>
     </div>
+    
     <script>
         // Preloader
         window.addEventListener('load', () => {
@@ -5605,9 +5611,10 @@ contactForm.addEventListener('submit', (e) => {
             
             showNotification(`Thank you, ${name}! Your message has been received.`, 'success');
             
-            // Reset form even on error to ensure fields are cleared after submission attempt
+            // Reset form
             e.target.reset();
             
+            // Hide message after 5 seconds
             setTimeout(() => {
                 formMessage.style.display = 'none';
             }, 5000);
@@ -5616,6 +5623,9 @@ contactForm.addEventListener('submit', (e) => {
             formMessage.textContent = 'Oops! Something went wrong. Please try again later.';
             formMessage.className = 'form-message error';
             formMessage.style.display = 'block';
+            
+            // Reset form even on error to ensure fields are cleared after submission attempt
+            e.target.reset();
             
             setTimeout(() => {
                 formMessage.style.display = 'none';
@@ -6583,7 +6593,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatchEvent(new Event('scroll'));
 });
 
-        // Chatbot Functionality
+// Chatbot Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const chatbotIcon = document.getElementById('chatbot-icon');
     const chatbotWindow = document.getElementById('chatbot-window');
@@ -6735,7 +6745,3 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
 </body>
 </html>
-
-
-
-
