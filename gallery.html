@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Creative Portfolio</title>
+    <meta name="description" content="Portfolio showcasing the creative works and photography of John Doe">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Portfolio Theme Colors */
+            --primary-color: #0D6EFD; /* Professional Blue */
+            --primary-light: #4DABF7;
+            --primary-dark: #1864AB;
+            --secondary-color: #495057; /* Sophisticated Grey */
+            --accent-color: #FF6B6B; /* Accent Red */
+            --dark-color: #212529; /* Dark Grey */
+            --darker-color: #000000; /* Black */
+            --light-color: #F8F9FA; /* Light Grey */
+            --text-color: #343A40; /* Dark Grey */
+            --text-light: #F8F9FA; /* Light Grey */
+            --text-muted: #6C757D; /* Muted Grey */
+            --bg-gradient: linear-gradient(135deg, #212529 0%, #343A40 100%); /* Dark Grey Gradient */
+            --bg-dark-gradient: linear-gradient(135deg, #000000 0%, #212529 100%); /* Black to Dark Grey */
+            --card-bg: rgba(255, 255, 255, 0.05); /* Semi-transparent White */
+            --card-bg-hover: rgba(255, 255, 255, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 16px;
+            --border-radius-sm: 8px;
+            --box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Light mode variables */
+        body.light-mode {
+            --primary-color: #0D6EFD;
+            --primary-light: #4DABF7;
+            --primary-dark: #1864AB;
+            --secondary-color: #495057;
+            --accent-color: #FF6B6B;
+            --dark-color: #F8F9FA;
+            --darker-color: #FFFFFF;
+            --light-color: #212529;
+            --text-color: #343A40;
+            --text-light: #212529;
+            --text-muted: #6C757D;
+            --bg-gradient: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+            --bg-dark-gradient: linear-gradient(135deg, #E9ECEF 0%, #F8F9FA 100%);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-bg-hover: rgba(255, 255, 255, 0.9);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            transition: background 0.5s ease, color 0.3s ease;
+        }
+        
+        /* Header Styles */
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(33, 37, 41, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--text-light);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            background: var(--card-bg-hover);
+        }
+        
+        .theme-toggle .material-symbols-outlined {
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+        
+        /* Hero Section */
+        .gallery-hero {
+            padding: 180px 20px 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .gallery-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+        
+        .gallery-hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        /* Portfolio Stats */
+        .portfolio-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Gallery Filter */
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        
+        .filter-btn {
+            padding: 10px 24px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 0 20px;
+            margin-bottom: 80px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 25px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-title {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            font-weight: 600;
+        }
+        
+        .gallery-category {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+        
+        .gallery-item:hover .gallery-title,
+        .gallery-item:hover .gallery-category {
+            transform: translateY(0);
+        }
+        
+        /* View Project Button */
+        .view-project {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 2;
+        }
+        
+        .gallery-item:hover .view-project {
+            opacity: 1;
+        }
+        
+        .view-project:hover {
+            background: var(--primary-light);
+        }
+        
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: var(--border-radius);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+            background: var(--primary-light);
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--text-light);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .lightbox-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .lightbox-caption p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .lightbox-nav:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .gallery-hero {
+                padding: 150px 20px 60px;
+            }
+            
+            .portfolio-stats {
+                gap: 30px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .lightbox-img {
+                max-height: 60vh;
+            }
+        }
+        
+        /* Theme specific styles */
+        body.light-mode .header {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        body.light-mode .filter-btn {
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--text-color);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-mode .filter-btn.active, 
+        body.light-mode .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+        
+        body.light-mode .gallery-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-mode .social-links a {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
+            color: var(--text-color);
+        }
+        
+        .theme-toggle .sun { display: none; }
+        .theme-toggle .moon { display: block; }
+        body.light-mode .theme-toggle .sun { display: block; }
+        body.light-mode .theme-toggle .moon { display: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        
+        <nav class="nav-links">
+            <a href="proport.html" class="active">GO BACK</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="sun material-symbols-outlined">light_mode</span>
+            <span class="moon material-symbols-outlined">dark_mode</span>
+        </button>
+    </header>
+    
+    <section class="gallery-hero">
+        
+        <p>Explore my collection of photography, design works, and creative projects. Each piece represents my artistic vision and technical expertise.</p>
+        
+        
+    </section>
+    
+    <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All Works</button>
+        <button class="filter-btn" data-filter="photography">Photography</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="art">Digital Art</button>
+        <button class="filter-btn" data-filter="personal">Personal Projects</button>
+    </div>
+    
+    <div class="gallery-grid">
+        <!-- Photography Items -->
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image1.jpeg" alt="Mountain Landscape" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">ESTD 1919 </h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image2.jpeg" alt="Forest Path" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Enchanted Mountain</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image3.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Historical</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image4.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Happy Christmas</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image5.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Porsche 911</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image6.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Christmas</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image7.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Dancing Coffee</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\am.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Fashion Show</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\am1.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Fashion Show</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\am2.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Fashion Show</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\am3.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Band Performance</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\am4.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Band Performance</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\am5.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">DJ Performance</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+         <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image9.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Jeep Wrangler SUV</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image12.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Palace</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image13.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Palace</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image15.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Palace</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image18.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Golden Hour</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image19.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">911</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image21.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Forest</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image22.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Festival</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image24.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Fire Work</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image25.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Christmas Tree</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image26.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Christmas Season</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image27.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">College Art Day</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image28.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Traditional Art</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+        <div class="gallery-item" data-category="photography">
+            <img src="E:\joel_portfolio\images\image13.jpeg" alt="Ocean Waves" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Palace</h3>
+                <p class="gallery-category">Photography</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+    <!-- Design Items -->
+       <!-- <div class="gallery-item" data-category="design">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=600&fit=crop" alt="Brand Identity" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Brand Identity</h3>
+                <p class="gallery-category">Design</p>
+            </div>
+            <button class="view-project">View Project</button>
+        </div>
+        
+        <div class="gallery-item" data-category="design">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=600&fit=crop" alt="UI/UX Design" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Mobile App UI</h3>
+                <p class="gallery-category">Design</p>
+            </div>
+            <button class="view-project">View Project</button>
+        </div>
+        
+        <div class="gallery-item" data-category="design">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=600&fit=crop" alt="Poster Design" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Concert Poster</h3>
+                <p class="gallery-category">Design</p>
+            </div>
+            <button class="view-project">View Project</button>
+        </div>-->
+        
+        <!-- Drawing Art Items -->
+        <div class="gallery-item" data-category="art">
+            <img src="E:\joel_portfolio\images\spider man.jpeg?w=600&h=600&fit=crop" alt="Abstract Art" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">spider man</h3>
+                <p class="gallery-category">Drawing Art</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="art">
+            <img src="E:\joel_portfolio\images\tree.jpeg?w=600&h=600&fit=crop" alt="Surreal Art" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Night sky</h3>
+                <p class="gallery-category">Drawing Art</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="art">
+            <img src="E:\joel_portfolio\images\miles morales.jpeg?w=600&h=600&fit=crop" alt="Character Design" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Miles Morales</h3>
+                <p class="gallery-category">Drawing Art</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="art">
+            <img src="E:\joel_portfolio\images\house.jpeg?w=600&h=600&fit=crop" alt="Character Design" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">House </h3>
+                <p class="gallery-category">Drawing Art</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+
+         <div class="gallery-item" data-category="art">
+            <img src="E:\joel_portfolio\images\building.jpeg?w=600&h=600&fit=crop" alt="Character Design" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Building</h3>
+                <p class="gallery-category">Drawing Art</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        <!-- Personal Project Items -->
+        <div class="gallery-item" data-category="personal">
+            <img src="E:\joel_portfolio\images\car_m1.PNG" alt="Sketchbook" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Car Management</h3>
+                <p class="gallery-category">Personal Project</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="personal">
+            <img src="E:\joel_portfolio\images\adzyo.PNG" alt="Book Photography" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Adzyo</h3>
+                <p class="gallery-category">Personal Project</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+        
+        <div class="gallery-item" data-category="personal">
+            <img src="E:\joel_portfolio\images\place1.PNG" alt="Workspace" class="gallery-img">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title">Placement Cell</h3>
+                <p class="gallery-category">Personal Project</p>
+            </div>
+            <button class="view-project">View Full Screen</button>
+        </div>
+    </div>
+    
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxCategory"></p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/artistry_by_joel?igsh=MXN4MXQ4bDV5dml5aw==" aria-label="Instagram" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+        </div>
+        
+    </footer>
+    
+    <script>
+        // Current year for footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
+        } else {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+        
+        // Gallery filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxCategory = document.getElementById('lightboxCategory');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        let currentImageIndex = 0;
+        const images = Array.from(document.querySelectorAll('.gallery-item'));
+        const filteredImages = [];
+        
+        // Open lightbox with clicked image
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                // Get all visible items based on current filter
+                const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                filteredImages.length = 0; // Clear array
+                
+                galleryItems.forEach((img, idx) => {
+                    if (activeFilter === 'all' || img.getAttribute('data-category') === activeFilter) {
+                        if (img.style.display !== 'none') {
+                            filteredImages.push(img);
+                        }
+                    }
+                });
+                
+                // Find the index of clicked image in filtered array
+                currentImageIndex = filteredImages.indexOf(item);
+                updateLightbox();
+                lightbox.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+        
+        // Update lightbox content
+        function updateLightbox() {
+            const currentItem = filteredImages[currentImageIndex];
+            const imgSrc = currentItem.querySelector('.gallery-img').getAttribute('src');
+            const title = currentItem.querySelector('.gallery-title').textContent;
+            const category = currentItem.querySelector('.gallery-category').textContent;
+            
+            lightboxImg.setAttribute('src', imgSrc);
+            lightboxTitle.textContent = title;
+            lightboxCategory.textContent = category;
+        }
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        });
+        
+        // Close when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Navigation
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + filteredImages.length) % filteredImages.length;
+            updateLightbox();
+        });
+        
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % filteredImages.length;
+            updateLightbox();
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('show')) {
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    currentImageIndex = (currentImageIndex - 1 + filteredImages.length) % filteredImages.length;
+                    updateLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    currentImageIndex = (currentImageIndex + 1) % filteredImages.length;
+                    updateLightbox();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
